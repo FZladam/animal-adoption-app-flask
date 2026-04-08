@@ -1,4 +1,4 @@
-# inf3191-tp3-20252
+# animal-adoption-app-flask
 
 ## Auteurs
 
