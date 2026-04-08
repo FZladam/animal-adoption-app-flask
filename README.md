@@ -19,19 +19,27 @@ Application web permettant de consulter et de mettre en adoption des animaux de 
 ## Technologies utilisées
 
 ### Backend
-- Python 3.15+
-- Flask 3+
-- SQLite3
+- Python
+- Flask
+- SQLite
 
 ### Frontend
 - HTML5
 - CSS3
 - JavaScript
 
-## Prérequis
-
-- Python 3.15 ou supérieur
-- Flask 3 ou supérieur
+## Structure du projet
+- `index.py` : le point d'entrée de l'app, il contient les routes de l'app
+- `database.py` : gère la connexion et les interactions avec la base de données
+- `db/` : 
+    - `animaux.db` : la base de données utilisée
+    - `animaux.sql` : script pour créer la base de données
+- `templates/` : toutes les pages HTML du site
+- `static/` : 
+    - `css/` : pour le style
+    - `js/` : pour les scripts
+    - `images/` : Les images utilisées dans le site  
+- `makefile` : permet de lancer le projet plus rapidement avec des commandes simples
 
 ## Installation
 
