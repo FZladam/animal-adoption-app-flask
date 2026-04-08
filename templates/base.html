@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <title>{% block title %} Adoption {% endblock%}</title>
+</head>
+
+<body>
+    <!--Menu global -->
+    <header>
+        <div>
+            <a href="/">
+                <img class="logo" src="{{url_for('static', filename='images/logo.png') }}" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="menu" href="/">Accueil</a></li>
+                <li><a class="menu" href="/adoption">Adoption</a></li>
+                <li><a class="menu" href="/form">Mettre en adoption</a></li>
+                <li><a class="menu" href="/apropos">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div>
+            <h3>🐾 Adoption d'animaux</h3>
+            <p>
+                Platforme gratuite d'adoption d'animaux de compagnie.<br>
+                Trouver votre compagnon idéal et offrez-lui un foyer aimant.
+            </p>
+        </div>
+
+        <div>
+            <h3>Navigation</h3>
+            <ul class="footer-menu">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/adoption">Adoption</a></li>
+                <li><a href="/form">Mettre en adoption</a></li>
+                <li><a href="/apropos">À propos</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Projet académique</h3>
+            <ul>
+                <li>📚 INF3191 - UQAM</li>
+                <li>Automne 2025</li>
+            </ul>
+        </div>
+
+        <div>
+            <p>© 2025 Adoption d'animaux - Tous droits réservés</p>
+            <p>Réalisé par <span class="noms">Pierre-Olivier Fortin & Fatima Zahra Ladam</span></p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

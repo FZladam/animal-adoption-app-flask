@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %} Tous les animaux à adopter {% endblock %}
+
+{% block content %}
+
+<!-- Titre principal -->
+<div class="titre">
+    <h1>Les animaux disponibles</h1>
+</div>
+
+<div class="recherche">
+    <form action="/recherche" method="get">
+        <input type="text" name="terme" placeholder="Rechercher un animal...">
+        <button type="submit">Rechercher</button>
+    </form>
+</div>
+
+<!-- Liste des animaux -->
+<div class="liste-animaux">
+    {% for animal in animaux %}
+    <div class="carte-animal">
+        <div class="img-animal">
+            {% if animal.espece == "Chat" %}
+            <img src="{{url_for('static', filename='images/chat.jpg') }}" alt="Chat">
+
+            {% elif animal.espece == "Chien" %}
+            <img src="{{url_for('static', filename='images/chien.jpg') }}" alt="Chien">
+
+            {% elif animal.espece == "Mouton" %}
+            <img src="{{url_for('static', filename='images/mouton.jpg') }}" alt="Mouton">
+
+            {% elif animal.espece == "Kangourou" %}
+            <img src="{{url_for('static', filename='images/kangourou.jpg') }}" alt="Kangourou">
+
+            {% elif animal.espece == "Escargot" %}
+            <img src="{{url_for('static', filename='images/escargot.jpg') }}" alt="Escargot">
+
+            {% elif animal.espece == "Serpent" %}
+            <img id="serpent" src="{{url_for('static', filename='images/serpent.jpg') }}" alt="Serpent">
+
+            {% else %}
+            <img src="{{url_for('static', filename='images/animauxdivers.jpg') }}" alt="Animaux">
+            {% endif %}
+        </div>
+
+        <div class="info-animal">
+            <h2>{{ animal.nom }}</h2>
+            <p class="race-animal">{{ animal.espece }} - {{ animal.race }}</p>
+            <p class="desc-animal">{{ animal.description }}</p>
+            <div class="infos">
+                <span class="label">Adresse</span><br>
+                <span class="value">{{ animal.adresse }}, {{ animal.ville }}, {{ animal.cp }} </span>
+            </div>
+
+            <div class="section-contact">
+                <a href="mailto:{{ animal.courriel }}?subject={{ ('Adoption de ' ~ animal.nom) | urlencode }}&body={{ ('Bonjour, je suis intéressé(e) par l\'adoption de ' ~ animal.nom) | urlencode }}"
+                    class="lien-contact">Adoption</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

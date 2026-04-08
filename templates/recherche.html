@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %} Accueil - Adoption d'animaux {% endblock %}
+
+{% block content %}
+
+<div class="page-recherche">
+    <h1>Rechercher un animal</h1>
+
+    <div class="recherche">
+        <form action="/recherche" method="get">
+            <input type="text" name="terme" value="{{ terme }}" placeholder="Rechercher un animal...">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
+
+    {% if resultats %}
+    <section class="titres">
+        <h2>Résultats de recherche </h2>
+        <p class="nom-animal">Pour <span class="gras">{{ terme }}</span></p>
+
+    </section>
+
+    {% if animaux %}
+    <p class="nbr-resultats">{{ animaux|length }} résultat(s) trouvé(s)</p>
+
+    {%if animaux|length == 1 %}
+    <div class="seul-resultat">
+        {% for animal in animaux %}
+        <div class="carte-animal">
+            <div class="img-animal">
+                {% if animal.espece == "Chat" %}
+                <img src="{{url_for('static', filename='images/chat.jpg') }}" alt="Chat">
+
+                {% elif animal.espece == "Chien" %}
+                <img src="{{url_for('static', filename='images/chien.jpg') }}" alt="Chien">
+
+                {% elif animal.espece == "Mouton" %}
+                <img src="{{url_for('static', filename='images/mouton.jpg') }}" alt="Mouton">
+
+                {% elif animal.espece == "Kangourou" %}
+                <img class="img-ligne2" src="{{url_for('static', filename='images/kangourou.jpg') }}" alt="Kangourou">
+
+                {% elif animal.espece == "Escargot" %}
+                <img src="{{url_for('static', filename='images/escargot.jpg') }}" alt="Escargot">
+
+                {% elif animal.espece == "Serpent" %}
+                <img src="{{url_for('static', filename='images/serpent.jpg') }}" alt="Serpent">
+
+                {% else %}
+                <img src="{{url_for('static', filename='images/carlin.jpg') }}" alt="Carlin">
+                {% endif %}
+            </div>
+
+            <div class="info-animal-seul">
+                <h2>{{ animal.nom }}</h2>
+                <p class="race-animal">{{ animal.espece }} - {{ animal.race }}</p>
+                <p class="desc-animal">{{ animal.description }}</p>
+                <a class="plus" href="/animal/{{ animal.id }}">Voir plus de détails</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="liste-animaux">
+        {% for animal in animaux %}
+        <div class="carte-animal">
+            <div class="img-animal">
+                {% if animal.espece == "Chat" %}
+                <img src="{{url_for('static', filename='images/chat.jpg') }}" alt="Chat">
+
+                {% elif animal.espece == "Chien" %}
+                <img src="{{url_for('static', filename='images/chien.jpg') }}" alt="Chien">
+
+                {% elif animal.espece == "Mouton" %}
+                <img src="{{url_for('static', filename='images/mouton.jpg') }}" alt="Mouton">
+
+                {% elif animal.espece == "Kangourou" %}
+                <img class="img-ligne2" src="{{url_for('static', filename='images/kangourou.jpg') }}" alt="Kangourou">
+
+                {% elif animal.espece == "Escargot" %}
+                <img src="{{url_for('static', filename='images/escargot.jpg') }}" alt="Escargot">
+
+                {% elif animal.espece == "Serpent" %}
+                <img src="{{url_for('static', filename='images/serpent.jpg') }}" alt="Serpent">
+
+                {% else %}
+                <img src="{{url_for('static', filename='images/carlin.jpg') }}" alt="Carlin">
+                {% endif %}
+            </div>
+
+            <div class="info-animal">
+                <h2>{{ animal.nom }}</h2>
+                <p class="race-animal">{{ animal.espece }} - {{ animal.race }}</p>
+                <p class="desc-animal">{{ animal.description }}</p>
+                <a href="/animal/{{ animal.id }}">Voir plus de détails</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="vide">
+        <p> Aucun animal trouvé pour "{{ terme }}"</p>
+        <p>Essayez avec d'autres mots-clés ou regardez tous les animaux <br> <a class="tous-animaux"
+                href="/adoption">Tous
+                les animaux</a></p>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <!--Pas de recherche effectuer (terme is None)-->
+    {% if not terme %}
+    <div class="msg-info">
+        <p>Utilisez la barre de recherche pour trouver un animal</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

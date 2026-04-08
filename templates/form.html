@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %} Mettre en adoption {% endblock %}
+
+{% block content %}
+
+<!-- Titre principal -->
+<div class="titre">
+    <h1>Mettre en adoption</h1>
+</div>
+<form id="formulaire" action="/ajouter" method="post">
+    <div class="section-question">
+        <label for="nom">Nom de l'animal</label>
+        <input type="text" id="nom" name="nom" value="{{ nom }}">
+        <p id="validation_nom">
+            {% if erreurs.nom %}{{ erreurs.nom }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="espece">Espèce</label>
+        <input type="text" id="espece" name="espece" value="{{ espece }}">
+        <p id="validation_espece"></p>
+    </div>
+    <div class="section-question">
+        <label for="race">Race</label>
+        <input type="text" id="race" name="race" value="{{ race }}">
+        <p id="validation_race">
+            {% if erreurs.race %}{{ erreurs.race }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="age">Âge</label>
+        <input type="number" id="age" name="age" value="{{ age }}">
+        <p id="validation_age">
+            {% if erreurs.age %}{{ erreurs.age }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" cols="60"
+            rows="5">{{ description if description else '' }}</textarea>
+        <p id="validation_description">
+            {% if erreurs.description %}{{ erreurs.description }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="courriel">Courriel</label>
+        <input type="text" id="courriel" name="courriel" value="{{ courriel }}">
+        <p id="validation_courriel">
+            {% if erreurs.courriel %}{{ erreurs.courriel }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse" value="{{ adresse }}">
+        <p id="validation_adresse">
+            {% if erreurs.adresse %}{{ erreurs.adresse }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="ville">Ville</label>
+        <input type="text" id="ville" name="ville" value="{{ ville }}">
+        <p id="validation_ville">
+            {% if erreurs.ville %}{{ erreurs.ville }}{% endif %}
+        </p>
+    </div>
+    <div class="section-question">
+        <label for="codepostal">Code Postal</label>
+        <input type="text" id="codepostal" name="codepostal" value="{{ codepostal }}">
+        <p id="validation_codepostal">
+            {% if erreurs.codepostal %}{{ erreurs.codepostal }}{% endif %}
+        </p>
+    </div>
+
+    <input type="submit" id="envoi" value="Envoyer">
+</form>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

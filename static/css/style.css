@@ -1,0 +1,578 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3c2a1e;
+    background-color: #F9F3EA;
+}
+
+/*=======================================================================
+HEADER
+=========================================================================*/
+
+header {
+    background-color: #EAC19F;
+    display: flex;
+    align-items: center;
+    gap: 25%;
+}
+
+.menu {
+    color: #4b2e1e;
+    font-size: 19px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 65px;
+    width: auto;
+    margin-left: 10%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu {
+    color: #4b2e1e;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.menu:hover {
+    color: #6E5845;
+}
+
+/*=======================================================================
+FOOTER
+=========================================================================*/
+footer {
+    background: linear-gradient(135deg, #9A735A 0%, #A88066 100%);
+    color: white;
+    padding: 10px 70px 30px;
+    display: grid;
+    grid-template-columns: 1.7fr 0.7fr 1fr 1.5fr;
+    gap: 30px;
+}
+
+footer h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+footer p {
+    color: #cbd5e1;
+    line-height: 1.9;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 10px;
+}
+
+footer li {
+    margin-bottom: 13px;
+    color: #BDC1C9;
+    font-size: 15px;
+}
+
+.footer-menu a {
+    color: #cbd5e1;
+}
+
+.footer-menu a:hover {
+    color: #60a5fa;
+}
+
+.noms {
+    color: #695446;
+    font-weight: 600;
+}
+
+/*=======================================================================
+Page accueil
+=========================================================================*/
+/* Titre principal */
+.titre {
+    font-size: 49px;
+    color: #4b2e1e;
+    text-align: center;
+}
+
+.recherche {
+    margin-bottom: 75px;
+}
+
+.recherche form {
+    margin-left: 25%;
+    display: flex;
+    gap: 25px;
+}
+
+.recherche input[type="text"] {
+    padding: 15px 70px;
+    border: 2px solid #CBBFB3;
+    border-radius: 11px;
+    font-size: 17px;
+    background-color: white;
+}
+
+.recherche button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 11px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #9A735A;
+    color: white;
+    cursor: pointer;
+}
+
+.recherche button:hover {
+    background-color: #7d5e48;
+}
+
+.liste-animaux {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin-left: 10%;
+}
+
+.carte-animal {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.img-animal {
+    width: 100%;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.img-animal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.info-animal {
+    padding: 20px 3%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-animal h2 {
+    font-size: 25px;
+    color: #4b2e1e;
+    margin-top: 0;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.race-animal {
+    color: #9A735A;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.desc-animal {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.carte-animal .infos {
+    margin-bottom: 15px;
+}
+
+.carte-animal .section-contact {
+    text-align: center;
+    margin-left: -3%;
+    margin-right: -3%;
+    padding: 15px 0;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.carte-animal .lien-contact {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #C89A63;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.carte-animal .lien-contact:hover {
+    background-color: #A88066;
+}
+
+#serpent {
+    object-position: 30% center;
+}
+
+/*=======================================================================
+Page animal
+=========================================================================*/
+
+.page-animal {
+    max-width: 1100px;
+    margin: 70px auto 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 35px;
+}
+
+.page-animal .section-contact {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 25px 25% 3%;
+}
+
+.img-animal-details img {
+    width: 410px;
+    height: 460px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
+.animal-details h1 {
+    font-size: 65px;
+    color: #4b2e1e;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.animal-infos h2 {
+    font-size: 29px;
+    color: #9A735A;
+    margin-bottom: 10px;
+}
+
+.section-infos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+.section-infos h2 {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 19px;
+    color: #4b2e1e;
+    font-weight: bold;
+    width: 100px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.value {
+    font-size: 19px;
+    color: #666;
+}
+
+.page-animal .section-contact {
+    text-align: center;
+    margin:25px 25% 3%;
+}
+
+.lien-contact,
+.tous-animaux {
+    display: inline-block;
+    padding: 15px 51px;
+    background: #C89A63;
+    color: white;
+    text-decoration: none;
+    border-radius: 51px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.lien-contact:hover {
+    background-color: #A88066;
+}
+
+/*=======================================================================
+Page mise en adoption
+=========================================================================*/
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+form {
+    position: relative;
+    border-style: none;
+    padding: 40px 20px;
+    text-align: left;
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 16px;
+    background: #F9F3EA;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #4b2e1e;
+}
+
+.section-question {
+    background: #EAC19F;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4b2e1e;
+    transition: all 0.3s ease;
+}
+
+.sectionquestion:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px #4b2e1e;
+}
+
+
+input,
+textarea {
+    color: #695446;
+    border: 2px solid #695446;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 14px 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    background-color: white;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:hover,
+textarea:hover {
+    outline: none;
+    border-color: #4b2e1e;
+    box-shadow: 0 0 0 3px rgba(190, 2, 1, 0.1);
+    transform: translateY(-2px);
+}
+
+
+/* Bouton envoyer */
+#envoi {
+    margin-top: 25px;
+    cursor: pointer;
+    background: #4b2e1e;
+    color: white;
+    padding: 18px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 40px auto;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 6px 20px rgba(11, 39, 104, 0.3);
+    transition: all 0.3s ease;
+    width: auto;
+}
+
+#envoi:hover {
+    background: #4b2e1e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(11, 39, 104, 0.4);
+}
+
+/*=======================================================================
+Page recherche
+=========================================================================*/
+.titres,
+.nbr-resultats,
+.vide {
+    text-align: center;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+.vide {
+    margin: 50px;
+}
+
+.tous-animaux {
+    margin: 30px;
+}
+
+.seul-resultat {
+    max-width: 500px;
+    margin: 30px auto;
+    display: block;
+}
+
+.info-animal-seul h2, 
+.info-animal-seul p{
+    text-align: center;
+}
+
+.plus {
+    margin-left: 185px;
+}
+
+/*=======================================================================
+Page a-propos
+=========================================================================*/
+.patte {
+    height: 50px;
+    width: 70px;
+}
+
+.propos-entete {
+    text-align: center;
+}
+
+.propos-entete h1 {
+    font-size: 55px;
+    color: #4b2e1e;
+    margin-bottom: 21px;
+}
+
+.propos-entete p {
+    font-size: 23px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.mission {
+   height: 40px;
+    width: 50px; 
+}
+.propos h2,
+.propos-corps h2,
+.stats h2 {
+    font-size: 35px;
+    color: #4b2e1e;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+.propos p {
+    font-size: 19px;
+    color: #666;
+    line-height: 1.8;
+    margin: auto 9%;
+}
+
+.cartes-ensemble {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 3% 15%;
+   
+}
+
+.nombre {
+    background: #C89A63;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 29px;
+    font-weight: bold;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carte {
+    background: #F2D9C4;
+    width: 165px;
+    height: 230px;
+    border-radius: 20px;
+    margin-bottom: 17%;
+}
+
+.carte h3 {
+    font-size: 25px;
+    margin: 10px auto 3px;
+    text-align: center;
+}
+
+.carte p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin: 10px 7px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    margin: 13px;
+}
+
+.taille-icon {
+    width: 75px;
+    height: 60px;
+}
+
+.stats-coprs {
+    display: flex;
+    gap: 170px;
+    margin: 20px 280px;
+    justify-content: center;
+}
+
+.stats-carte {
+    text-align: center;
+}
+
+.stats-carte p {
+    font-size: 37px;
+    font-weight: bold;
+    margin: 20px auto 10px;
+}
+
+.stats-label {
+    font-size: 17px;
+    color: #D1772E;
+    
+}

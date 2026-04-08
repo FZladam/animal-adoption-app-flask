@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %} Accueil - Adoption d'animaux {% endblock %}
+
+{% block content %}
+
+<div class="page-animal">
+    <div class="img-animal-details">
+        {% if animal.espece == "Chat" %}
+        <img src="{{url_for('static', filename='images/chat.jpg') }}" alt="{{ animal.nom}}">
+
+        {% elif animal.espece == "Chien" %}
+        <img src="{{url_for('static', filename='images/chien.jpg') }}" alt="{{ animal.nom}}">
+
+        {% elif animal.espece == "Mouton" %}
+        <img src="{{url_for('static', filename='images/mouton.jpg') }}" alt="{{ animal.nom}}">
+
+        {% elif animal.espece == "Kangourou" %}
+        <img id="kangourou" src="{{url_for('static', filename='images/kangourou.jpg') }}" alt="{{ animal.nom}}">
+
+        {% elif animal.espece == "Escargot" %}
+        <img src="{{url_for('static', filename='images/escargot.jpg') }}" alt="{{ animal.nom}}">
+
+        {% elif animal.espece == "Serpent" %}
+        <img id="serpent" src="{{url_for('static', filename='images/serpent.jpg') }}" alt="{{ animal.nom}}">
+
+        {% else %}
+        <img src="{{url_for('static', filename='images/animauxdivers.jpg') }}" alt="{{ animal.nom}}">
+        {% endif %}
+    </div>
+
+    <div class="animal-details">
+        <h1>{{ animal.nom }}</h1>
+
+        <div class="animal-infos">
+            <h2>Informations</h2>
+
+            <section class="section-infos">
+                <div class="infos">
+                    <span class="label">Espèce :</span>
+                    <span class="value">{{ animal.espece }}</span>
+                </div>
+
+                <div class="infos">
+                    <span class="label">Âge :</span>
+                    <span class="value">{{ animal.age }} ans</span>
+                </div>
+
+                <div class="infos">
+                    <span class="label">Race :</span>
+                    <span class="value">{{ animal.race }}</span>
+                </div>
+
+                <div class="infos">
+                    <span class="label">Adresse :</span>
+                    <span class="value">{{ animal.adresse }}, {{ animal.ville }}, {{ animal.cp }} </span>
+                </div>
+
+                <h2>Description</h2>
+                <div class="infos">
+                    <span class="value">{{ animal.description }}</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="section-contact">
+        <a href="mailto:{{ animal.courriel }}?subject={{ ('Adoption de ' ~ animal.nom) | urlencode }}&body={{ ('Bonjour, je suis intéressé(e) par l\'adoption de ' ~ animal.nom) | urlencode }}"
+            class="lien-contact">Contacte pour {{ animal.nom }}</a>
+    </div>
+</div>
+
+{% endblock %}

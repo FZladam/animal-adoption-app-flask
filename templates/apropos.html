@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %} A propos - Adoption d'animaux {% endblock %}
+
+{% block content %}
+<div class="page-propos">
+    <div class="propos-entete">
+        <h1><img class="patte" src="{{url_for('static', filename='images/patte.png') }}" alt="Patte"> À propos de nous
+        </h1>
+        <p>Votre platforme de confiance pour l'adoption responsable d'animaux de compagnie</p>
+    </div>
+
+    <div class="propos">
+        <h2> <img class="mission" src="{{url_for('static', filename='images/mission.png') }}" alt="Mission icon"> Notre
+            Mission</h2>
+        <p>
+            Nous facilitons la mise en relation entre des animaux à la recherche d'un foyer aimant et des familles
+            prêtes à les accueillir. Notre plateforme gratuite permet à chacun de donner une seconde chance à un animal
+            dans le besoin.
+        </p>
+    </div>
+
+    <div class="propos-corps">
+        <h2>Comment ça fonctionne ?</h2>
+        <div class="cartes-ensemble">
+            <div class="carte">
+                <div class="nombre">1</div>
+                <h3>Consulter</h3>
+                <p>Consultez les profils des animaux disponibles avec leurs descriptions détaillées.</p>
+            </div>
+
+            <div class="carte">
+                <div class="nombre">2</div>
+                <h3>Recherchez</h3>
+                <p>Utilisez notre moteur de recherceh pour trouver l'animal qui correspond à vos critères.</p>
+            </div>
+
+            <div class="carte">
+                <div class="nombre">3</div>
+                <h3>Contactez</h3>
+                <p>Contactez directement le propriétaire par email pour ograniser une rencontre.</p>
+            </div>
+
+            <div class="carte">
+                <div class="nombre">4</div>
+                <h3>Adoptez</h3>
+                <p>accueillez votre nouveau compagnon et offrez-lui une vie heureuse et aimante.</p>
+            </div>
+        </div>
+
+        <h2>Nos valeurs</h2>
+        <div class="cartes-ensemble">
+            <div class="carte">
+                <div class="icon">
+                    <img src="{{url_for('static', filename='images/coeur.png') }}" alt="coeur">
+                </div>
+                <h3>Bien-être animal</h3>
+                <p>Le bonheur et la santé des animaux sont notre priorité absolue.</p>
+            </div>
+
+            <div class="carte">
+                <div class="icon">
+                    <img class="taille-icon" src="{{url_for('static', filename='images/gratuit.png') }}" alt="coeur">
+                </div>
+                <h3>Gratuité</h3>
+                <p>Notre service est entièrement gratuit pour faciliter l'adoption.</p>
+            </div>
+
+
+            <div class="carte">
+                <div class="icon">
+                    <img class="taille-icon" src="{{url_for('static', filename='images/etoile.png') }}" alt="coeur">
+                </div>
+                <h3>Transparence</h3>
+                <p>Toutes les informations sur les animaux sont claires et vérifiables.</p>
+            </div>
+
+            <div class="carte">
+                <div class="icon">
+                    <img class="taille-icon" src="{{url_for('static', filename='images/home.png') }}" alt="coeur">
+                </div>
+                <h3>Adoption responsable</h3>
+                <p>Nous encourageons une réflexion mûre avant toute adoption.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="stats">
+        <h2>Nos réussites</h2>
+        <div class="stats-coprs">
+            <div class="stats-carte">
+                <p>500+</p>
+                <p class="stats-label">Animaux <br> adoptés</p>
+            </div>
+
+            <div class="stats-carte">
+                <p>500+</p>
+                <p class="stats-label">Familles <br> heureuses</p>
+            </div>
+            <div class="stats-carte">
+                <p>100%</p>
+                <p class="stats-label">Gratuit</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
