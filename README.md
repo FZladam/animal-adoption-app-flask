@@ -2,8 +2,8 @@
 
 ## Auteurs
 
-- **Fatima Zahra Ladam** - LADF17289101
-- **Pierre-Olivier Fortin** - FORP22028608
+- **Fatima Zahra Ladam**
+- **Pierre-Olivier Fortin**
 
 ## Description
 
